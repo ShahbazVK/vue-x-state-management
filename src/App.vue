@@ -1,5 +1,5 @@
 <template>
-<base-container v-if="this.$store.state.userAuthenticated" title="Vuex">
+<base-container v-if="this.$store.getters.userAuthenticated" title="Vuex">
     <h3>{{$store.state.counter}}</h3>
     <favorite-value></favorite-value>
     <button @click="add10">Add 10</button>
@@ -9,7 +9,7 @@
     <br>
     <the-counter></the-counter>
 </base-container>
-<base-container v-else title="Authentication">
+<base-container title="Authentication">
     <UserAuth></UserAuth>
 </base-container>
 </template>
